@@ -12,6 +12,9 @@ class Config(object):
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
     #     'sqlite:///' + os.path.join(basedir, 'app.db')
 
+    # token安全验证配置
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+
     # 数据库的配置信息
     HOSTNAME = "127.0.0.1"
     PORT = "3306"

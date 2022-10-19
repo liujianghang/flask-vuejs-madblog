@@ -14,7 +14,7 @@ from app.models import User
 @bp.route('/users', methods=['POST'])
 def create_user():
     '''注册一个新用户'''
-    '''检查'''
+    # 检查
     data = request.get_json()
     if not data:
         return bad_request('You must post a JSON data.')

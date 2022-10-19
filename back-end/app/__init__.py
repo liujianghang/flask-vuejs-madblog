@@ -16,7 +16,7 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # enable CORS
-    CORS(app)
+    CORS(app, supports_credentials=True)
     # enable db
     db.init_app(app)
     # enable migrate

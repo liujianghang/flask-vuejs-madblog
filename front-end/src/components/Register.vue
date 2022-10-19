@@ -3,7 +3,6 @@
     <h1>Register</h1>
     <div class="row">
       <div class="col-md-4">
-         <!--    该部分需要填入两个表单，只需要执行方法，不需要刷新页面    -->
         <form @submit.prevent="onSubmit">
           <div class="form-group">
             <label for="username">Username</label>
@@ -29,9 +28,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-import store from '../store.js'
-
 export default {
   name: 'Register', //this is the name of the component
   data () {
@@ -82,16 +78,16 @@ export default {
         return false
       }
 
-      const path = 'http://localhost:5000/api/users'
+      const path = '/users'
       const payload = {
         username: this.registerForm.username,
         email: this.registerForm.email,
         password: this.registerForm.password
       }
-      axios.post(path, payload)
+      this.$axios.post(path, payload)
         .then((response) => {
           // handle success
-          store.setNewAction()
+          this.$toasted.success('Congratulations, you are now a registered user !', { icon: 'fingerprint' })
           this.$router.push('/login')
         })
         .catch((error) => {

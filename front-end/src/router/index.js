@@ -8,6 +8,9 @@ import Ping from '@/components/Ping'
 import EditProfile from '@/components/EditProfile'
 
 
+import Test from '@/components/Test'
+
+
 import store from '../store'
 
 Vue.use(Router)
@@ -54,6 +57,10 @@ const router = new Router({
       path: '/ping',
       name: 'Ping',
       component: Ping
+    },{
+      path: '/test',
+      name: 'Test',
+      component: Test
     }
   ]
 })

@@ -22,7 +22,7 @@ def create_app(config_class=Config):
     # enable migrate
     migrate.init_app(app,db)
 
-    # 注册 blueprint
+    # 注册 blueprint 但是实例是在api/__ini__.py中产生的
     from app.api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 

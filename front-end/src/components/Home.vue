@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <alert 
+    <alert
       v-for="(alert, index) in alerts" :key="index"
       v-bind:variant="alert.variant"
       v-bind:message="alert.message">

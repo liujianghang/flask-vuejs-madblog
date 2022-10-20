@@ -9,16 +9,17 @@ axios.defaults.baseURL = 'http://localhost:5000/api'
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
-  // Do something before request is sent
+  // Do something before request is sent 成功的情况
   const token = window.localStorage.getItem('madblog-token')
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
   }
   return config
 }, function (error) {
-  // Do something with request error
+  // Do something with request error 失败的情况
   return Promise.reject(error)
 })
+
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {

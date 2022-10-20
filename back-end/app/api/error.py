@@ -1,4 +1,5 @@
 from flask import jsonify
+# Werkzeug是一个专门用来处理HTTP和WSGI的工具库，可以方便的在Python程序中处理HTTP协议相关内容
 from werkzeug.http import HTTP_STATUS_CODES
 
 # 为了能在蓝图中返回相应的错误信息,需要蓝图信息和数据库信息

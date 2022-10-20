@@ -3,7 +3,7 @@ from app import db
 from app.api import bp
 from app.api.auth import basic_auth
 
-
+# 这里调用了/tokens，传递得到账号和密码，就会自动去auth验证账号密码
 @bp.route('/tokens', methods=['POST'])
 @basic_auth.login_required
 def get_token():
